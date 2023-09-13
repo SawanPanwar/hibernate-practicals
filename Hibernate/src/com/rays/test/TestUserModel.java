@@ -1,6 +1,8 @@
 package com.rays.test;
 
 import java.util.Date;
+import java.util.Iterator;
+import java.util.List;
 
 import com.rays.dto.UserDTO;
 import com.rays.model.UserModel;
@@ -12,7 +14,36 @@ public class TestUserModel {
 		// testAdd();
 		// testUpdate();
 		// testAuth();
-		testFindByPk();
+		// testFindByPk();
+		testSearch();
+
+	}
+
+	private static void testSearch() {
+
+		UserDTO dto = new UserDTO();
+
+		dto.setFirstName("aman");
+
+		UserModel model = new UserModel();
+
+		List list = model.search(null, 1, 5);
+
+		Iterator it = list.iterator();
+
+		while (it.hasNext()) {
+
+			dto = (UserDTO) it.next();
+
+			System.out.print(dto.getId());
+			System.out.print("\t" + dto.getFirstName());
+			System.out.print("\t" + dto.getLastName());
+			System.out.print("\t" + dto.getLoginId());
+			System.out.print("\t" + dto.getPassword());
+			System.out.print("\t" + dto.getDob());
+			System.out.println("\t" + dto.getAddress());
+
+		}
 
 	}
 
@@ -78,10 +109,10 @@ public class TestUserModel {
 
 		UserDTO dto = new UserDTO();
 
-		dto.setId(1);
-		dto.setFirstName("arun");
-		dto.setLastName("ojha");
-		dto.setLoginId("arun@gmail.com");
+		dto.setId(6);
+		dto.setFirstName("pranav");
+		dto.setLastName("mahajan");
+		dto.setLoginId("pranav@gmail.com");
 		dto.setPassword("123");
 		dto.setDob(new Date());
 		dto.setAddress("indore");

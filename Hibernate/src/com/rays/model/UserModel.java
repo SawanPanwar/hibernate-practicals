@@ -2,11 +2,13 @@ package com.rays.model;
 
 import java.util.List;
 
+import org.hibernate.Criteria;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
+import org.hibernate.criterion.Restrictions;
 
 import com.rays.dto.UserDTO;
 
@@ -94,6 +96,48 @@ public class UserModel {
 		UserDTO dto = (UserDTO) session.get(UserDTO.class, id);
 
 		return dto;
+
+	}
+
+	public List search(UserDTO dto, int pageNo, int pageSize) {
+
+		SessionFactory sf = new Configuration().configure().buildSessionFactory();
+
+		Session session = sf.openSession();
+
+		Criteria criteria = session.createCriteria(UserDTO.class);
+
+		if (dto != null) {
+
+			if (dto.getFirstName() != null && dto.getFirstName().length() > 0) {
+
+				criteria.add(Restrictions.eq("firstName", dto.getFirstName()));
+
+			}
+
+			if (dto.getLastName() != null && dto.getLastName().length() > 0) {
+
+				criteria.add(Restrictions.eq("firstName", dto.getFirstName()));
+
+			}
+
+			if (dto.getDob() != null && dto.getDob().getTime() > 0) {
+
+				criteria.add(Restrictions.eq("dob", dto.getDob()));
+
+			}
+
+		}
+
+		if (pageSize > 0) {
+			pageNo = (pageNo - 1) * pageSize;
+			criteria.setFirstResult(pageNo);
+			criteria.setMaxResults(pageSize);
+		}
+
+		List list = criteria.list();
+
+		return list;
 
 	}
 
