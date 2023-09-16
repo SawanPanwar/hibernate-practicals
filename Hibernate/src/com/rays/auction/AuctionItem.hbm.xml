@@ -12,7 +12,7 @@
 			<column name="DESCRIPTION" />
 		</property>
 
-		<set name="bids" table="AUCTIONITEM" cascade="all" lazy="true">
+		<set name="bids" table="AUCTIONITEM" cascade="all" fetch="join">
 			<key>
 				<column name="ITEM_ID" />
 			</key>
