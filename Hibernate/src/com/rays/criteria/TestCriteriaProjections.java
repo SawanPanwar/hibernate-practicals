@@ -1,4 +1,4 @@
-package com.rays.test;
+package com.rays.criteria;
 
 import java.util.Iterator;
 import java.util.List;
@@ -13,7 +13,7 @@ import org.hibernate.criterion.Projections;
 
 import com.rays.dto.UserDTO;
 
-public class TestCriteriaAggregate {
+public class TestCriteriaProjections {
 
 	public static void main(String[] args) {
 
@@ -27,7 +27,9 @@ public class TestCriteriaAggregate {
 
 		ProjectionList p = Projections.projectionList();
 
-		p.add(Projections.max("id"));
+		p.add(Projections.property("id"));
+
+		p.add(Projections.property("firstName"));
 
 		criteria.setProjection(p);
 
@@ -37,9 +39,10 @@ public class TestCriteriaAggregate {
 
 		while (it.hasNext()) {
 
-			Object dto = (Object) it.next();
+			Object[] dto = (Object[]) it.next();
 
-			System.out.print(dto);
+			System.out.print(dto[0]);
+			System.out.println("\t" + dto[1]);
 
 		}
 

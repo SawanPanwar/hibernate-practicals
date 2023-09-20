@@ -1,4 +1,4 @@
-package com.rays.test;
+package com.rays.criteria;
 
 import java.util.Iterator;
 import java.util.List;
