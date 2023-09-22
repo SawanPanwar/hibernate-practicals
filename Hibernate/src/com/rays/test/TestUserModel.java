@@ -11,11 +11,11 @@ public class TestUserModel {
 
 	public static void main(String[] args) {
 
-		// testAdd();
+		testAdd();
 		// testUpdate();
 		// testAuth();
 		// testFindByPk();
-		testSearch();
+		// testSearch();
 
 	}
 
@@ -109,7 +109,7 @@ public class TestUserModel {
 
 		UserDTO dto = new UserDTO();
 
-		dto.setId(6);
+		// dto.setId(6);
 		dto.setFirstName("pranav");
 		dto.setLastName("mahajan");
 		dto.setLoginId("pranav@gmail.com");
