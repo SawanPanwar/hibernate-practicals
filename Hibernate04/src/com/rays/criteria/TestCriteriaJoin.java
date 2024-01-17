@@ -24,7 +24,7 @@ public class TestCriteriaJoin {
 
 		Criteria criteria = session.createCriteria(AuctionItem.class);
 
-		//criteria.add(Restrictions.eq("id", 2));
+		criteria.add(Restrictions.eq("id", 1));
 
 		List list = criteria.list();
 
