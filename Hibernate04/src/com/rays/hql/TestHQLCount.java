@@ -9,8 +9,6 @@ import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
 
-import com.rays.user.UserDTO;
-
 public class TestHQLCount {
 
 	public static void main(String[] args) {

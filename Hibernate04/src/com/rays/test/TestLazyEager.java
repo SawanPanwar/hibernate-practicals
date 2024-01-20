@@ -1,25 +1,15 @@
-package com.rays.oneone;
+package com.rays.test;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
 
-public class TestOneOne {
+import com.rays.auction.AuctionItem;
+
+public class TestLazyEager {
 
 	public static void main(String[] args) {
-
-		Address empAddress = new Address();
-
-		empAddress.setId(2);
-		empAddress.setStreet("street2");
-		empAddress.setCity("bhopal");
-
-		Employee e = new Employee();
-
-		e.setId(2);
-		e.setName("gopal");
-		e.setEmpAddress(empAddress);
 
 		SessionFactory sf = new Configuration().configure().buildSessionFactory();
 
@@ -27,7 +17,11 @@ public class TestOneOne {
 
 		Transaction tx = session.beginTransaction();
 
-		session.save(e);
+		AuctionItem item = (AuctionItem) session.get(AuctionItem.class, 1);
+
+		// Set s = item.getBids();
+
+		// Iterator it = s.iterator();
 
 		tx.commit();
 
