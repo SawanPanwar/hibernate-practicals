@@ -1,4 +1,4 @@
-package com.rays.dto;
+package com.rays.user;
 
 import java.util.Date;
 
@@ -67,5 +67,4 @@ public class UserDTO {
 	public void setAddress(String address) {
 		this.address = address;
 	}
-
 }
