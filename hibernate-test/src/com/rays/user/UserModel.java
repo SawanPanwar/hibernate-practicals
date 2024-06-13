@@ -25,6 +25,8 @@ public class UserModel {
 		tx.commit();
 
 		session.close();
+		
+		
 
 	}
 
