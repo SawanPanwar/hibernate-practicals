@@ -16,12 +16,14 @@
 		<property name="hbm2ddl.auto">update</property>
 		<property name="show_sql">true</property>
 
-		<!-- <mapping resource="com/rays/user/UserDTO.hbm.xml" /> -->
-		<mapping resource="com/rays/auction/AuctionItem.hbm.xml" />
-		<mapping resource="com/rays/auction/Bid.hbm.xml" />
+		<mapping resource="com/rays/user/UserDTO.hbm.xml" />
+		<!-- <mapping resource="com/rays/auction/AuctionItem.hbm.xml" /> -->
+		<!-- <mapping resource="com/rays/auction/Bid.hbm.xml" /> -->
 		<!-- <mapping resource="com/rays/oneone/Employee.hbm.xml" /> -->
 		<!-- <mapping resource="com/rays/oneone/Address.hbm.xml" /> -->
 		<!-- <mapping resource="com/rays/inheritance/Payment.hbm.xml" /> -->
+		<!-- <mapping resource="com/rays/subclass/Payment.hbm.xml" /> -->
+		<!-- <mapping resource="com/rays/subclass/discriminator/Payment.hbm.xml" /> -->
 
 		<!-- <class-cache usage="read-only" class="com.rays.user.UserDTO" /> -->
 	</session-factory>
