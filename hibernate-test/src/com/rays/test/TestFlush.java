@@ -31,7 +31,7 @@ public class TestFlush {
 
 		session.save(dto);
 
-		session.flush();
+		// session.flush();
 
 		System.out.println("id = " + dto.getId());
 
