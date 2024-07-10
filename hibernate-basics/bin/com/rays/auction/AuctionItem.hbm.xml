@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Jun 12, 2024, 4:20:36 PM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+	<class name="com.rays.auction.AuctionItem" table="AUCTIONITEM">
+		<id name="id" type="int">
+			<column name="ID" />
+			<generator class="assigned" />
+		</id>
+		<property name="description" type="java.lang.String">
+			<column name="DESCRIPTION" />
+		</property>
+		<set name="bids" table="AUCTIONITEM" cascade="all" fetch="join">
+			<key>
+				<column name="ITEM_ID" />
+			</key>
+			<one-to-many class="com.rays.auction.Bid" />
+		</set>
+	</class>
+</hibernate-mapping>
