@@ -1,23 +1,26 @@
 package com.rays.test;
 
-import java.util.Set;
+import java.util.Date;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
 
-import com.rays.auction.AuctionItem;
-import com.rays.auction.Bid;
+import com.rays.user.UserDTO;
 
-public class TestTransitivePersistance {
+public class TestSavePersist {
 
 	public static void main(String[] args) {
 
-		Bid bid = new Bid();
-		bid.setId(4);
-		bid.setAmount(4000);
-		bid.setTimeStamp("TTTT");
+		UserDTO dto = new UserDTO();
+
+		dto.setFirstName("pranav");
+		dto.setLastName("mahajan");
+		dto.setLoginId("pranav@gmail.com");
+		dto.setPassword("123");
+		dto.setDob(new Date());
+		dto.setAddress("indore");
 
 		SessionFactory sf = new Configuration().configure().buildSessionFactory();
 
@@ -25,16 +28,15 @@ public class TestTransitivePersistance {
 
 		Transaction tx = session.beginTransaction();
 
-		AuctionItem item = (AuctionItem) session.get(AuctionItem.class, 1);
+		int i = (int) session.save(dto);
 
-		Set s = item.getBids();
+		System.out.println("i => " + i);
 
-		s.add(bid);
+		// session.persist(dto);
 
 		tx.commit();
 
 		session.close();
 
 	}
-
 }
