@@ -1,0 +1,18 @@
+%d: Date and time of the log entry.
+%p: Log level ( DEBUG, INFO, WARN, ERROR, FATAL etc.)
+%C: Class name from where the log message originated.
+%L: Line number from where the log message originated.
+%m: Log message content.
+%n: Newline character.
+
+%d{yyyy-MM-dd HH:mm:ss} %-5p %C{1}:%L - %m%n
+
+%d{yyyy-MM-dd HH:mm:ss}: This is a date format specifier. It displays the date and time of the log entry in the format "yyyy-MM-dd HH:mm:ss" (year-month-day hour:minute:second).
+
+%-5p: This is the log level specifier. It displays the log level left-aligned and takes up a width of 5 characters. For example, "DEBUG" or "ERROR" would be displayed as "DEBUG" or "ERROR", respectively.
+
+%C{1}:%L: This represents the class and line number from where the log message originated. %C{1} displays only the class name (without package), and %L displays the line number.
+
+-: A hyphen character is used to separate the log message content from the log level, class name, and line number.
+
+%m%n: The %m specifier represents the actual log message content, and %n adds a newline character at the end of each log entry.
