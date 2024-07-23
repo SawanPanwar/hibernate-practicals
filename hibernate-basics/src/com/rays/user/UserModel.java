@@ -115,6 +115,9 @@ public class UserModel {
 			}
 		}
 
+		// criteria.setFirstResult(0);
+		// criteria.setMaxResults(5);
+
 		List list = criteria.list();
 
 		session.close();
