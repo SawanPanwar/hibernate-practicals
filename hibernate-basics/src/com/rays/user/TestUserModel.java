@@ -4,7 +4,7 @@ import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
 
-public class TestUser {
+public class TestUserModel {
 
 	public static void main(String[] args) {
 

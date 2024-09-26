@@ -1,4 +1,4 @@
-package com.rays.user;
+package com.rays.crud;
 
 import java.util.Date;
 
@@ -6,6 +6,8 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
+
+import com.rays.user.UserDTO;
 
 public class TestSave {
 
