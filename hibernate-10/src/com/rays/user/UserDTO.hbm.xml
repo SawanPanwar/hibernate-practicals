@@ -3,10 +3,10 @@
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <!-- Generated Dec 10, 2024, 11:07:55 AM by Hibernate Tools 3.5.0.Final -->
 <hibernate-mapping>
-    <class name="com.rays.user.UserDTO" table="USERDTO">
+    <class name="com.rays.user.UserDTO" table="USER">
         <id name="id" type="int">
             <column name="ID" />
-            <generator class="assigned" />
+            <generator class="increment" />
         </id>
         <property name="firstName" type="java.lang.String">
             <column name="FIRSTNAME" />
