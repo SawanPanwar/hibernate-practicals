@@ -22,7 +22,10 @@
 		<!-- <mapping resource="com/rays/auction/Bid.hbm.xml" /> -->
 		<!-- <mapping resource="com/rays/oneone/Employee.hbm.xml" /> -->
 		<!-- <mapping resource="com/rays/oneone/Address.hbm.xml" /> -->
-		<mapping resource="com/rays/inheritance/Payment.hbm.xml" />
+		<!-- <mapping resource="com/rays/inheritance/Payment.hbm.xml" /> -->
+		<!-- <mapping resource="com/rays/subclass/Payment.hbm.xml" /> -->
+		<mapping
+			resource="com/rays/subclass/discriminator/Payment.hbm.xml" />
 		
 		<!-- <class-cache usage="read-only" class="com.rays.user.UserDTO" /> -->
 
