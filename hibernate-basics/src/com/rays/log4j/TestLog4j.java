@@ -27,7 +27,5 @@ public class TestLog4j {
 			log.info("Arithmetic Error", e);
 
 		}
-
 	}
-
 }

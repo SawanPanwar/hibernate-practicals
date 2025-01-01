@@ -29,5 +29,4 @@ public class Payment {
 	public void setPaymentType(String paymentType) {
 		this.paymentType = paymentType;
 	}
-
 }

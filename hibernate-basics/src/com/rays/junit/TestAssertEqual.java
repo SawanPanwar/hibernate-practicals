@@ -1,6 +1,6 @@
 package com.rays.junit;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 
@@ -11,8 +11,8 @@ public class TestAssertEqual {
 
 		int max = Calculation.findMax(new int[] { 1, 3, 4, 2, 6 });
 
-		assertEquals(6, max);
-
+		// assertEquals(5, max);
+		// assertTrue(6 == max);
+		assertTrue("is not true", 5 == max);
 	}
-
 }
