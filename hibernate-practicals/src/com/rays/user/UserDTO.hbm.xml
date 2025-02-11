@@ -6,7 +6,7 @@
     <class name="com.rays.user.UserDTO" table="USERDTO">
         <id name="id" type="int">
             <column name="ID" />
-            <generator class="assigned" />
+            <generator class="increment" />
         </id>
         <property name="firstName" type="java.lang.String">
             <column name="FIRSTNAME" />
