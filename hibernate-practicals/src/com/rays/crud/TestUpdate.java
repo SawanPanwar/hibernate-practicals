@@ -14,10 +14,10 @@ public class TestUpdate {
 	public static void main(String[] args) {
 
 		UserDTO dto = new UserDTO();
-		dto.setId(2);
-		dto.setFirstName("Goutam");
-		dto.setLastName("Gandhwani");
-		dto.setLoginId("goutam@gmail.com");
+		dto.setId(1);
+		dto.setFirstName("xyz");
+		dto.setLastName("xyz");
+		dto.setLoginId("xyz@gmail.com");
 		dto.setPassword("123");
 		dto.setDob(new Date());
 		dto.setAddress("indore");

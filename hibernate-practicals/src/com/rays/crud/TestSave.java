@@ -14,10 +14,10 @@ public class TestSave {
 	public static void main(String[] args) {
 
 		UserDTO dto = new UserDTO();
-		dto.setId(2);
-		dto.setFirstName("xyz");
-		dto.setLastName("xyz");
-		dto.setLoginId("xyz@gmail.com");
+		dto.setId(1);
+		dto.setFirstName("abc");
+		dto.setLastName("abc");
+		dto.setLoginId("abc@gmail.com");
 		dto.setPassword("123");
 		dto.setDob(new Date());
 		dto.setAddress("indore");
@@ -33,7 +33,5 @@ public class TestSave {
 		tx.commit();
 
 		session.close();
-
 	}
-
 }

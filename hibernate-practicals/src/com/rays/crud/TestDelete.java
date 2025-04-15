@@ -12,7 +12,7 @@ public class TestDelete {
 	public static void main(String[] args) {
 
 		UserDTO dto = new UserDTO();
-		dto.setId(2);
+		dto.setId(1);
 
 		SessionFactory sf = new Configuration().configure().buildSessionFactory();
 
