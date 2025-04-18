@@ -1,11 +1,13 @@
-package com.rays.oneone;
+package com.rays.test;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
 
-public class TestOneOneDelete {
+import com.rays.auction.AuctionItem;
+
+public class TestLazyEager {
 
 	public static void main(String[] args) {
 
@@ -15,9 +17,11 @@ public class TestOneOneDelete {
 
 		Transaction tx = session.beginTransaction();
 
-		Employee e = (Employee) session.get(Employee.class, 1);
+		AuctionItem item = (AuctionItem) session.get(AuctionItem.class, 1);
 
-		session.delete(e);
+		// Set s = item.getBids();
+
+		// Iterator it = s.iterator();
 
 		tx.commit();
 

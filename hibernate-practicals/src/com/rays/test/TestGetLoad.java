@@ -1,11 +1,12 @@
-package com.rays.oneone;
+package com.rays.test;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
 
-public class TestOneOneDelete {
+import com.rays.user.UserDTO;
+
+public class TestGetLoad {
 
 	public static void main(String[] args) {
 
@@ -13,14 +14,10 @@ public class TestOneOneDelete {
 
 		Session session = sf.openSession();
 
-		Transaction tx = session.beginTransaction();
+		UserDTO dto = (UserDTO) session.load(UserDTO.class, 100);
 
-		Employee e = (Employee) session.get(Employee.class, 1);
+		// UserDTO dto = (UserDTO) session.get(UserDTO.class, 100);
 
-		session.delete(e);
-
-		tx.commit();
-
-		session.close();
+		System.out.println(dto);
 	}
 }

@@ -9,28 +9,24 @@ public class TestOneOneUpdate {
 
 	public static void main(String[] args) {
 
-		Address empAddress = new Address();
-
-		empAddress.setId(1);
-		empAddress.setStreet("street2");
-		empAddress.setCity("indore");
-
-		Employee e = new Employee();
-
-		e.setId(1);
-		e.setName("abc");
-		e.setEmpAddress(empAddress);
-
 		SessionFactory sf = new Configuration().configure().buildSessionFactory();
-
 		Session session = sf.openSession();
-
 		Transaction tx = session.beginTransaction();
 
-		session.update(e);
+		Employee e = (Employee) session.get(Employee.class, 1);
+
+		if (e != null) {
+			e.setName("abc");
+			
+			Address empAddress = e.getEmpAddress();
+			empAddress.setStreet("street2");
+			empAddress.setCity("indore");
+		} else {
+			System.out.println("Employee not found!");
+		}
 
 		tx.commit();
-
 		session.close();
+		sf.close();
 	}
 }

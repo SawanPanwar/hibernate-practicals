@@ -9,14 +9,13 @@ public class TestAuctionDelete {
 
 	public static void main(String[] args) {
 
-		AuctionItem item = new AuctionItem();
-		item.setId(1);
-
 		SessionFactory sf = new Configuration().configure().buildSessionFactory();
 
 		Session session = sf.openSession();
 
 		Transaction tx = session.beginTransaction();
+
+		AuctionItem item = (AuctionItem) session.get(AuctionItem.class, 1);
 
 		session.delete(item);
 
