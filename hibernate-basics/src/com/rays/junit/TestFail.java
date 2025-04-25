@@ -10,13 +10,13 @@ public class TestFail {
 	public void testAdd() throws Exception {
 
 		UserBean bean = new UserBean();
-		bean.setId(17);
-		bean.setName("ajay");
+		bean.setId(7);
+		bean.setName("aaa");
 		bean.setSalary(6000);
 
 		UserModel.add(bean);
 		
-		bean = UserModel.findByPk(18);
+		bean = UserModel.findByPk(8);
 
 		if (bean == null) {
 

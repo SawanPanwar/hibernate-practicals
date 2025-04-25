@@ -131,5 +131,4 @@ public class UserModel {
 		System.out.println("Data Deleted " + i);
 
 	}
-
 }

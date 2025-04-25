@@ -29,5 +29,4 @@ public class UserBean {
 	public void setSalary(int salary) {
 		this.salary = salary;
 	}
-
 }

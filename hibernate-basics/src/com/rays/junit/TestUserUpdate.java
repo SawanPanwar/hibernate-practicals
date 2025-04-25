@@ -1,23 +1,22 @@
 package com.rays.junit;
 
-import static org.junit.Assert.assertEquals;
-
 import org.junit.Test;
 
-public class TestUserUpdate {
+import junit.framework.TestCase;
+
+public class TestUserUpdate extends TestCase {
 
 	@Test
-	public void update() throws Exception {
+	public void testUpdate() throws Exception {
 
-		UserBean bean = UserModel.findByPk(15);
+		UserBean bean = UserModel.findByPk(6);
 
-		bean.setName("suraj");
+		bean.setName("aaa");
 
 		UserModel.update(bean);
 
-		bean = UserModel.findByPk(15);
+		bean = UserModel.findByPk(6);
 
-		assertEquals("suraj", bean.getName());
-
+		assertEquals("aaa", bean.getName());
 	}
 }

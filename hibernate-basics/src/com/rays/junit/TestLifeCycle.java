@@ -41,5 +41,4 @@ public class TestLifeCycle {
 	public static void afterClass() throws Exception {
 		System.out.println("after class");
 	}
-
 }
