@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+		"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+		"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+		<property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+		<property name="hibernate.connection.password">root</property>
+		<property name="hibernate.connection.url">jdbc:mysql://localhost:3306/hibernate_annotations</property>
+		<property name="hibernate.connection.username">root</property>
+		
+		<property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+		<property name="hibernate.hbm2ddl.auto">update</property>
+		<property name="show_sql">true</property>
+		<property name="format_sql">true</property>
+
+		<!-- <property name="hibernate.cache.provider_class">org.hibernate.cache.EhCacheProvider</property> -->
+		<!-- <property name="hibernate.cache.use_second_level_cache">true</property> -->
+		<!-- <property name="hibernate.cache.use_query_cache">true</property> -->
+
+		<!-- <mapping class="com.rays.user.UserDTO" /> -->
+		
+		<mapping class="com.rays.auction.AuctionItem" />
+		<mapping class="com.rays.auction.Bid" />
+		
+		<!-- <mapping class="com.rays.oneone.Employee" /> -->
+		<!-- <mapping class="com.rays.oneone.Address" /> -->
+		
+	    <!-- <mapping class="com.rays.inheritance.Payment" />
+		<mapping class="com.rays.inheritance.CreditCardPayment" />
+		<mapping class="com.rays.inheritance.Cash" />
+		<mapping class="com.rays.inheritance.Cheque" /> -->
+
+		<!-- <mapping class="com.rays.subclass.Payment" />
+		<mapping class="com.rays.subclass.CreditCardPayment" />
+		<mapping class="com.rays.subclass.Cash" />
+		<mapping class="com.rays.subclass.Cheque" /> -->
+
+		<!-- <mapping class="com.rays.subclass.discriminator.Payment" />
+		<mapping class="com.rays.subclass.discriminator.CreditCardPayment" />
+		<mapping class="com.rays.subclass.discriminator.Cash" />
+		<mapping class="com.rays.subclass.discriminator.Cheque" /> -->
+
+		<!-- <class-cache usage="read-only" class="com.rays.user.UserDTO" /> -->
+	</session-factory>
+</hibernate-configuration>
