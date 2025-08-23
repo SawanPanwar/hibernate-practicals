@@ -1,26 +1,17 @@
-package com.rays.crud;
+package com.rays.sql;
 
-import java.util.Date;
+import java.util.Iterator;
+import java.util.List;
 
+import org.hibernate.SQLQuery;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
 
-import com.rays.user.UserDTO;
-
-public class TestSave {
+public class TestSQLCount {
 
 	public static void main(String[] args) {
-
-		UserDTO dto = new UserDTO();
-		dto.setId(2);
-		dto.setFirstName("vpn");
-		dto.setLastName("vpn");
-		dto.setLoginId("vpn@gmail.com");
-		dto.setPassword("123");
-		dto.setDob(new Date());
-		dto.setAddress("indore");
 
 		SessionFactory sf = new Configuration().configure().buildSessionFactory();
 
@@ -28,10 +19,19 @@ public class TestSave {
 
 		Transaction tx = session.beginTransaction();
 
-		session.save(dto);
+		SQLQuery q = session.createSQLQuery("select count(*) from st_user");
 
+		List list = q.list();
+
+		Iterator it = list.iterator();
+
+		while (it.hasNext()) {
+
+			Object dto = (Object) it.next();
+
+			System.out.print(dto);
+		}
 		tx.commit();
-
 		session.close();
 	}
 }
